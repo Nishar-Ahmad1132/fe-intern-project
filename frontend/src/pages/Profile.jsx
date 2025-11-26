@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import NavBar from "../components/NavBar";
 import API from "../services/api";
 
 export default function Profile() {
@@ -104,7 +105,15 @@ export default function Profile() {
     `${apiBase.replace(/\/$/, "")}/${profile.avatarUrl.replace(/^\//, "")}`;
 
   return (
+    <>
+    {/* <NavBar
+        onLogout={logout}
+        profileName={profile?.name || "..."}
+        avatarUrl={profile?.avatarUrl}
+      /> */}
     <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl border border-gray-100 animate-fadeIn">
+      
+
       <h2 className="text-2xl font-semibold text-indigo-600 mb-5">
         My Profile
       </h2>
@@ -242,5 +251,6 @@ export default function Profile() {
         `}
       </style>
     </div>
+    </>
   );
 }
