@@ -5,27 +5,20 @@ A modern full-stack web application built as part of the Frontend Developer Inte
 This project demonstrates the ability to build production-ready apps with secure APIs, protected routes, and database-backed functionality.
 
 🚀 Tech Stack
+```bash
 Frontend
-
-React (Vite)
-
-TailwindCSS
-
-Axios
-
-React Router
-
-Protected Routes
+    React (Vite)
+    TailwindCSS
+    Axios
+    React Router
+    Protected Routes
 
 Backend
-
-Node.js + Express
-
-MongoDB Atlas
-
-JWT Authentication
-
-Bcrypt Password Hashing
+    Node.js + Express
+    MongoDB Atlas
+    JWT Authentication
+    Bcrypt Password Hashing
+```
 
 ## 📁 Project Structure
 
@@ -53,70 +46,72 @@ fe-intern-project/
 ```
 
 🔐 Core Features
+
+```bash
 Authentication
 
-Secure Login / Signup using JWT
-
-Password hashing with bcrypt
-
-Protected routes on frontend
-
-Token storage with Axios interceptors
+    Secure Login / Signup using JWT
+    
+    Password hashing with bcrypt
+    
+    Protected routes on frontend
+    
+    Token storage with Axios interceptors
 
 Dashboard
 
-Authenticated dashboard with personalized data
-
-CRUD operations for Notes
-
-Search + Filter functionality
-
-Pagination support
-
-Smooth UI with TailwindCSS
+    Authenticated dashboard with personalized data
+    
+    CRUD operations for Notes
+    
+    Search + Filter functionality
+    
+    Pagination support
+    
+    Smooth UI with TailwindCSS
 
 User Profile
 
-View user information
-
-Update profile details (name, email)
-
-Upload / update avatar image
-
-Image hosting using Express static folder
+    View user information
+    
+    Update profile details (name, email)
+    
+    Upload / update avatar image
+    
+    Image hosting using Express static folder
 
 Backend
 
-REST API architecture
-
-MongoDB Atlas database
-
-Authentication middleware
-
-Validation and error handling
-
-Scalable folder structure
+    REST API architecture
+    
+    MongoDB Atlas database
+    
+    Authentication middleware
+    
+    Validation and error handling
+    
+    Scalable folder structure
 
 Frontend
 
-Fully responsive UI
+    Fully responsive UI
+    
+    Clean component architecture
+    
+    Modern dashboard layout
+    
+    Centralized API service
+    
+    Loading skeletons + animations
 
-Clean component architecture
-
-Modern dashboard layout
-
-Centralized API service
-
-Loading skeletons + animations
+```
 
 🌐 Live Demo
 
-🌍 Frontend (Vercel)
-👉 Add your deployed link here:
+🌍 Frontend (Vercel) 
 https://fe-intern-project.vercel.app/
 
-🛠 Backend (Render)
-👉 Add your backend API link here:
+🛠 Backend (Render) 
 https://fe-intern-project.onrender.com/api
 
 🎯 HOW TO RUN LOCALLY
@@ -124,18 +119,23 @@ https://fe-intern-project.onrender.com/api
 1️⃣ Clone the repository
 --------------------------------
 git clone https://github.com/Nishar-Ahmad1132/fe-intern-project.git
+
 cd fe-intern-project
 
 
 2️⃣ Backend Setup
 --------------------------------
 cd backend
+
 npm install
 
 # Create .env file (backend)
 PORT=4000
+
 MONGO_URI=<your-mongodb-atlas-uri>
+
 JWT_SECRET=<your-secret-key>
+
 JWT_EXPIRES_IN=7d
 
 # Start backend
@@ -148,6 +148,7 @@ http://localhost:4000
 3️⃣ Frontend Setup
 --------------------------------
 cd ../frontend
+
 npm install
 
 # Create .env file (frontend)
