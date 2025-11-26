@@ -3,6 +3,7 @@
 
 # Exclude environment files everywhere
 **/.env
+**/.env.example
 **/.env.*    # handles .env.local, .env.development, etc.
 
 # Exclude all log files anywhere
