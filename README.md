@@ -164,3 +164,15 @@ http://localhost:5173
 Frontend runs on:
 
 http://localhost:5173
+
+
+
+📈 Scalability & Production Notes
+```
+Frontend can be deployed on Vercel, Netlify, or static hosting.
+Backend is stateless → suitable for horizontal scaling (Render, Railway, AWS).
+JWT authentication supports distributed environments.
+MongoDB Atlas supports auto-scaling + global access.
+Components and routes are fully modular for future expansion.
+API layer is isolated for switching backend with minimal changes.
+```
