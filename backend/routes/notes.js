@@ -86,17 +86,23 @@ router.put("/:id", auth, async (req, res) => {
 // DELETE /api/notes/:id
 router.delete("/:id", auth, async (req, res) => {
   try {
+    console.log("DELETE request:", req.params.id, "User:", req.user.id);
+
     const note = await Note.findById(req.params.id);
 
     if (!note) {
+      console.log("Note not found");
       return res.status(404).json({ msg: "Note not found" });
     }
 
     if (note.user.toString() !== req.user.id) {
+      console.log("Not authorized");
       return res.status(401).json({ msg: "Not authorized" });
     }
 
     await Note.deleteOne({ _id: req.params.id });
+
+    console.log("Note deleted successfully");
 
     res.json({ msg: "Note removed successfully" });
   } catch (err) {
@@ -104,6 +110,7 @@ router.delete("/:id", auth, async (req, res) => {
     res.status(500).json({ msg: "Server error", error: err.message });
   }
 });
+
 
 
 
