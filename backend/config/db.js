@@ -7,7 +7,7 @@ const connectDB = async () => {
       throw new Error("MONGO_URI not set in environment");
     }
     await mongoose.connect(uri, {
-      // options handled by mongoose defaults in v7
+      
     });
     console.log("MongoDB connected");
   } catch (err) {

@@ -95,8 +95,9 @@ API service layer
 Dashboard + CRUD UI
 
 🎯 How to Run the Project Locally
+
 1️⃣ Clone the project
-git clone https://github.com/<your-username>/fe-intern-project.git
+git clone https://github.com/Nishar-Ahmad1132/fe-intern-project.git
 cd fe-intern-project
 
 2️⃣ Backend Setup
