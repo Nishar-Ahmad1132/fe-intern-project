@@ -27,48 +27,30 @@ JWT Authentication
 
 Bcrypt Password Hashing
 
+## 📁 Project Structure
 
-📁 Project Structure
-
+```bash
 fe-intern-project/
-
 │
 ├── backend/
-
 │   ├── config/
-
 │   ├── models/
-
 │   ├── routes/
-
 │   ├── middleware/
-
 │   ├── server.js
-
 │   └── package.json
-
 │
-
 ├── frontend/
-
 │   ├── src/
-
 │   │   ├── pages/
-
 │   │   ├── components/
-
 │   │   ├── services/
-
 │   ├── vite.config.js
-
 │   ├── index.html
-
 │   └── package.json
-
 │
-
 └── README.md
-
+```
 
 🔐 Features Implemented
 Authentication
