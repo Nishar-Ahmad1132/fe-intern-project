@@ -1,8 +1,8 @@
-Frontend Developer Intern Assignment – Full-Stack Web App
+🌐 Frontend Developer Intern Assignment – Full-Stack Web Application
 
-A full-stack scalable web application built as part of the Frontend Developer Intern Assignment, featuring authentication, a protected dashboard, CRUD operations, profile management, and JWT-based security.
+A modern full-stack web application built as part of the Frontend Developer Intern Assignment, showcasing skills in frontend engineering, backend development, authentication, CRUD operations, profile management, and scalable app architecture.
 
-This project demonstrates frontend engineering, API integration, backend development, and scalable architecture design.
+This project demonstrates the ability to build production-ready apps with secure APIs, protected routes, and database-backed functionality.
 
 🚀 Tech Stack
 Frontend
@@ -52,100 +52,112 @@ fe-intern-project/
 └── README.md
 ```
 
-🔐 Features Implemented
+🔐 Core Features
 Authentication
 
-
-Signup/Login using JWT
+Secure Login / Signup using JWT
 
 Password hashing with bcrypt
 
-Protected routes
+Protected routes on frontend
+
+Token storage with Axios interceptors
 
 Dashboard
 
-Fully authenticated dashboard
+Authenticated dashboard with personalized data
 
-User profile display
+CRUD operations for Notes
 
-Notes CRUD operations
+Search + Filter functionality
 
-Search + Filter
+Pagination support
 
-Logout functionality
+Smooth UI with TailwindCSS
+
+User Profile
+
+View user information
+
+Update profile details (name, email)
+
+Upload / update avatar image
+
+Image hosting using Express static folder
 
 Backend
 
-REST APIs
-
-Profile update
-
-CRUD for notes
-
-Validation + error handling
+REST API architecture
 
 MongoDB Atlas database
 
+Authentication middleware
+
+Validation and error handling
+
+Scalable folder structure
+
 Frontend
 
-Responsive UI with TailwindCSS
+Fully responsive UI
 
-Form validation
+Clean component architecture
 
-API service layer
+Modern dashboard layout
 
-Dashboard + CRUD UI
+Centralized API service
 
-🎯 How to Run the Project Locally
+Loading skeletons + animations
 
-1️⃣ Clone the project
+🌐 Live Demo
 
+🌍 Frontend (Vercel)
+👉 Add your deployed link here:
+https://fe-intern-project.vercel.app/
+
+🛠 Backend (Render)
+👉 Add your backend API link here:
+https://fe-intern-project.onrender.com/api
+
+🎯 HOW TO RUN LOCALLY
+
+1️⃣ Clone the repository
+--------------------------------
 git clone https://github.com/Nishar-Ahmad1132/fe-intern-project.git
-
 cd fe-intern-project
 
+
 2️⃣ Backend Setup
-
+--------------------------------
 cd backend
-
 npm install
 
-
-Create .env:
-
+# Create .env file (backend)
 PORT=4000
-
-MONGO_URI=<your-mongodb-atlas-connection-string>
-
-JWT_SECRET=<your-secret>
-
+MONGO_URI=<your-mongodb-atlas-uri>
+JWT_SECRET=<your-secret-key>
 JWT_EXPIRES_IN=7d
 
-
-Start backend:
-
+# Start backend
 npm run dev
 
-
-Backend runs on:
-
+# Backend available at:
 http://localhost:4000
 
+
 3️⃣ Frontend Setup
-
+--------------------------------
 cd ../frontend
-
 npm install
 
-
-Create .env:
-
+# Create .env file (frontend)
 VITE_API_URL=http://localhost:4000/api
 
-
-Run frontend:
-
+# Start frontend
 npm run dev
+
+# Frontend available at:
+http://localhost:5173
 
 
 Frontend runs on:
