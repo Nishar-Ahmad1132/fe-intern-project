@@ -27,29 +27,48 @@ JWT Authentication
 
 Bcrypt Password Hashing
 
-Multer (optional – for avatar uploads)
 
 📁 Project Structure
+
 fe-intern-project/
+
 │
 ├── backend/
+
 │   ├── config/
+
 │   ├── models/
+
 │   ├── routes/
+
 │   ├── middleware/
+
 │   ├── server.js
+
 │   └── package.json
+
 │
+
 ├── frontend/
+
 │   ├── src/
+
 │   │   ├── pages/
+
 │   │   ├── components/
+
 │   │   ├── services/
+
 │   ├── vite.config.js
+
 │   ├── index.html
+
 │   └── package.json
+
 │
+
 └── README.md
+
 
 🔐 Features Implemented
 Authentication
