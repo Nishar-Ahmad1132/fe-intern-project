@@ -1,0 +1,18 @@
+# Exclude node_modules everywhere
+**/node_modules/
+
+# Exclude environment files everywhere
+**/.env
+**/.env.*    # handles .env.local, .env.development, etc.
+
+# Exclude all log files anywhere
+**/*.log
+
+# Exclude all build/dist folders
+**/dist/
+
+# Exclude VSCode settings anywhere
+**/.vscode/
+
+# Exclude MacOS system files
+**/.DS_Store
