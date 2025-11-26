@@ -5,21 +5,31 @@ A full-stack scalable web application built as part of the Frontend Developer In
 This project demonstrates frontend engineering, API integration, backend development, and scalable architecture design.
 
 🚀 Tech Stack
-Frontend:
-   React (Vite)
-   TailwindCSS
-   Axios
-   React Router
-   Protected Routes
+Frontend
 
-Backend:
-   Node.js + Express
-   MongoDB Atlas
-   JWT Authentication
-   Bcrypt Password Hashing
+React (Vite)
 
+TailwindCSS
 
-Project Structure
+Axios
+
+React Router
+
+Protected Routes
+
+Backend
+
+Node.js + Express
+
+MongoDB Atlas
+
+JWT Authentication
+
+Bcrypt Password Hashing
+
+Multer (optional – for avatar uploads)
+
+📁 Project Structure
 fe-intern-project/
 │
 ├── backend/
@@ -43,31 +53,46 @@ fe-intern-project/
 
 🔐 Features Implemented
 Authentication
-   Signup/Login using JWT
-   Password hashing with bcrypt
-   Protected routes
+
+Signup/Login using JWT
+
+Password hashing with bcrypt
+
+Protected routes
 
 Dashboard
-   Fully authenticated dashboard
-   User profile display
-   Notes CRUD operations
+
+Fully authenticated dashboard
+
+User profile display
+
+Notes CRUD operations
 
 Search + Filter
 
 Logout functionality
 
 Backend
-   REST APIs
-   Profile update
-   CRUD for notes
-   Validation + error handling
-   MongoDB Atlas database
+
+REST APIs
+
+Profile update
+
+CRUD for notes
+
+Validation + error handling
+
+MongoDB Atlas database
 
 Frontend
-   Responsive UI with TailwindCSS
-   Form validation
-   API service layer
-   Dashboard + CRUD UI
+
+Responsive UI with TailwindCSS
+
+Form validation
+
+API service layer
+
+Dashboard + CRUD UI
 
 🎯 How to Run the Project Locally
 1️⃣ Clone the project
@@ -88,17 +113,22 @@ JWT_EXPIRES_IN=7d
 
 
 Start backend:
-   npm run dev
+
+npm run dev
+
 
 Backend runs on:
-   http://localhost:4000
+
+http://localhost:4000
 
 3️⃣ Frontend Setup
-   cd ../frontend
-   npm install
+cd ../frontend
+npm install
+
 
 Create .env:
-   VITE_API_URL=http://localhost:4000/api
+
+VITE_API_URL=http://localhost:4000/api
 
 
 Run frontend:
