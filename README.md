@@ -54,6 +54,7 @@ fe-intern-project/
 🔐 Features Implemented
 Authentication
 
+
 Signup/Login using JWT
 
 Password hashing with bcrypt
