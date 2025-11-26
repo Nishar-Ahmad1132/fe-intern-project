@@ -1,31 +1,24 @@
-Frontend Developer Intern Assignment – Full-Stack Web App
+🌐 Frontend Developer Intern Assignment – Full-Stack Web Application
 
-A full-stack scalable web application built as part of the Frontend Developer Intern Assignment, featuring authentication, a protected dashboard, CRUD operations, profile management, and JWT-based security.
+A modern full-stack web application built as part of the Frontend Developer Intern Assignment, showcasing skills in frontend engineering, backend development, authentication, CRUD operations, profile management, and scalable app architecture.
 
-This project demonstrates frontend engineering, API integration, backend development, and scalable architecture design.
+This project demonstrates the ability to build production-ready apps with secure APIs, protected routes, and database-backed functionality.
 
 🚀 Tech Stack
+```bash
 Frontend
-
-React (Vite)
-
-TailwindCSS
-
-Axios
-
-React Router
-
-Protected Routes
+    React (Vite)
+    TailwindCSS
+    Axios
+    React Router
+    Protected Routes
 
 Backend
-
-Node.js + Express
-
-MongoDB Atlas
-
-JWT Authentication
-
-Bcrypt Password Hashing
+    Node.js + Express
+    MongoDB Atlas
+    JWT Authentication
+    Bcrypt Password Hashing
+```
 
 ## 📁 Project Structure
 
@@ -52,102 +45,134 @@ fe-intern-project/
 └── README.md
 ```
 
-🔐 Features Implemented
+🔐 Core Features
+
+```bash
 Authentication
 
-
-Signup/Login using JWT
-
-Password hashing with bcrypt
-
-Protected routes
+    Secure Login / Signup using JWT
+    
+    Password hashing with bcrypt
+    
+    Protected routes on frontend
+    
+    Token storage with Axios interceptors
 
 Dashboard
 
-Fully authenticated dashboard
+    Authenticated dashboard with personalized data
+    
+    CRUD operations for Notes
+    
+    Search + Filter functionality
+    
+    Pagination support
+    
+    Smooth UI with TailwindCSS
 
-User profile display
+User Profile
 
-Notes CRUD operations
-
-Search + Filter
-
-Logout functionality
+    View user information
+    
+    Update profile details (name, email)
+    
+    Upload / update avatar image
+    
+    Image hosting using Express static folder
 
 Backend
 
-REST APIs
-
-Profile update
-
-CRUD for notes
-
-Validation + error handling
-
-MongoDB Atlas database
+    REST API architecture
+    
+    MongoDB Atlas database
+    
+    Authentication middleware
+    
+    Validation and error handling
+    
+    Scalable folder structure
 
 Frontend
 
-Responsive UI with TailwindCSS
+    Fully responsive UI
+    
+    Clean component architecture
+    
+    Modern dashboard layout
+    
+    Centralized API service
+    
+    Loading skeletons + animations
 
-Form validation
+```
 
-API service layer
+🌐 Live Demo
 
-Dashboard + CRUD UI
+🌍 Frontend (Vercel) 
+[https://fe-intern-project.vercel.app/](https://fe-intern-project-bpjel7k7r-nishar-ahmads-projects.vercel.app/)
 
-🎯 How to Run the Project Locally
+🛠 Backend (Render) 
+[https://fe-intern-project.onrender.com/api](https://fe-intern-project.onrender.com/health)
 
-1️⃣ Clone the project
+🎯 HOW TO RUN LOCALLY
 
+1️⃣ Clone the repository
+--------------------------------
 git clone https://github.com/Nishar-Ahmad1132/fe-intern-project.git
 
 cd fe-intern-project
 
-2️⃣ Backend Setup
 
+2️⃣ Backend Setup
+--------------------------------
 cd backend
 
 npm install
 
-
-Create .env:
-
+# Create .env file (backend)
 PORT=4000
 
-MONGO_URI=<your-mongodb-atlas-connection-string>
+MONGO_URI=<your-mongodb-atlas-uri>
 
-JWT_SECRET=<your-secret>
+JWT_SECRET=<your-secret-key>
 
 JWT_EXPIRES_IN=7d
 
-
-Start backend:
-
+# Start backend
 npm run dev
 
-
-Backend runs on:
-
+# Backend available at:
 http://localhost:4000
 
-3️⃣ Frontend Setup
 
+3️⃣ Frontend Setup
+--------------------------------
 cd ../frontend
 
 npm install
 
-
-Create .env:
-
+# Create .env file (frontend)
 VITE_API_URL=http://localhost:4000/api
 
-
-Run frontend:
-
+# Start frontend
 npm run dev
+
+# Frontend available at:
+http://localhost:5173
 
 
 Frontend runs on:
 
 http://localhost:5173
+
+
+
+📈 Scalability & Production Notes
+```
+Frontend can be deployed on Vercel, Netlify, or static hosting.
+Backend is stateless → suitable for horizontal scaling (Render, Railway, AWS).
+JWT authentication supports distributed environments.
+MongoDB Atlas supports auto-scaling + global access.
+Components and routes are fully modular for future expansion.
+API layer is isolated for switching backend with minimal changes.
+```
