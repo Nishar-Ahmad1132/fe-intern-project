@@ -103,154 +103,157 @@ export default function Profile() {
   const avatarSrc =
     profile.avatarUrl &&
     `${apiBase.replace(/\/$/, "")}/${profile.avatarUrl.replace(/^\//, "")}`;
+    
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  };
 
   return (
     <>
-    {/* <NavBar
+      <NavBar
         onLogout={logout}
         profileName={profile?.name || "..."}
         avatarUrl={profile?.avatarUrl}
-      /> */}
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl border border-gray-100 animate-fadeIn">
-      
+      />
+      <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl border border-gray-100 animate-fadeIn">
+        <h2 className="text-2xl font-semibold text-indigo-600 mb-5">
+          My Profile
+        </h2>
 
-      <h2 className="text-2xl font-semibold text-indigo-600 mb-5">
-        My Profile
-      </h2>
+        {/* Avatar + Info */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-6">
+          {avatarSrc ? (
+            <img
+              src={avatarSrc}
+              alt="avatar"
+              className="w-20 h-20 rounded-full object-cover shadow-md border"
+            />
+          ) : (
+            <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-xl text-gray-600 shadow-inner">
+              U
+            </div>
+          )}
 
-      {/* Avatar + Info */}
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-6">
-        {avatarSrc ? (
-          <img
-            src={avatarSrc}
-            alt="avatar"
-            className="w-20 h-20 rounded-full object-cover shadow-md border"
-          />
-        ) : (
-          <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-xl text-gray-600 shadow-inner">
-            U
+          <div className="text-center sm:text-left">
+            <h3 className="text-lg font-semibold text-gray-800">
+              {profile.name}
+            </h3>
+            <p className="text-sm text-gray-500">{profile.email}</p>
+
+            <button
+              onClick={() => {
+                setIsEditing((v) => !v);
+                // reset edit fields if opening the editor
+                if (!isEditing) {
+                  setEditName(profile.name || "");
+                  setEditEmail(profile.email || "");
+                }
+              }}
+              className="mt-2 text-sm text-indigo-600 hover:underline"
+            >
+              {isEditing ? "Cancel" : "Edit Profile"}
+            </button>
+          </div>
+        </div>
+
+        {/* Edit Profile Section */}
+        {isEditing && (
+          <form
+            onSubmit={saveProfile}
+            className="space-y-4 p-4 border rounded-lg bg-gray-50 mb-6 animate-slideDown"
+          >
+            <div>
+              <label className="block text-sm font-medium text-gray-600 mb-1">
+                Name
+              </label>
+              <input
+                value={editName}
+                onChange={(e) => setEditName(e.target.value)}
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-600 mb-1">
+                Email
+              </label>
+              <input
+                value={editEmail}
+                onChange={(e) => setEditEmail(e.target.value)}
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+
+            <div className="flex gap-3">
+              <button
+                type="submit"
+                className="flex-1 w-full py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition"
+              >
+                Save Changes
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsEditing(false);
+                  setEditName(profile.name || "");
+                  setEditEmail(profile.email || "");
+                }}
+                className="py-2 px-4 bg-gray-100 rounded-md hover:bg-gray-200 transition"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        )}
+
+        {/* Avatar Upload */}
+        <form onSubmit={upload} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-600 mb-1">
+              Update Avatar
+            </label>
+
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setFile(e.target.files[0])}
+              className="block w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-indigo-500 focus:border-indigo-500"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition"
+          >
+            Upload Avatar
+          </button>
+        </form>
+
+        {/* Message */}
+        {msg && (
+          <div
+            className={`mt-4 text-sm px-3 py-2 rounded-md ${
+              msg.toLowerCase().includes("success")
+                ? "bg-green-100 text-green-700"
+                : "bg-yellow-100 text-yellow-700"
+            }`}
+          >
+            {msg}
           </div>
         )}
 
-        <div className="text-center sm:text-left">
-          <h3 className="text-lg font-semibold text-gray-800">
-            {profile.name}
-          </h3>
-          <p className="text-sm text-gray-500">{profile.email}</p>
-
-          <button
-            onClick={() => {
-              setIsEditing((v) => !v);
-              // reset edit fields if opening the editor
-              if (!isEditing) {
-                setEditName(profile.name || "");
-                setEditEmail(profile.email || "");
-              }
-            }}
-            className="mt-2 text-sm text-indigo-600 hover:underline"
-          >
-            {isEditing ? "Cancel" : "Edit Profile"}
-          </button>
-        </div>
-      </div>
-
-      {/* Edit Profile Section */}
-      {isEditing && (
-        <form
-          onSubmit={saveProfile}
-          className="space-y-4 p-4 border rounded-lg bg-gray-50 mb-6 animate-slideDown"
-        >
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">
-              Name
-            </label>
-            <input
-              value={editName}
-              onChange={(e) => setEditName(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">
-              Email
-            </label>
-            <input
-              value={editEmail}
-              onChange={(e) => setEditEmail(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
-
-          <div className="flex gap-3">
-            <button
-              type="submit"
-              className="flex-1 w-full py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition"
-            >
-              Save Changes
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setIsEditing(false);
-                setEditName(profile.name || "");
-                setEditEmail(profile.email || "");
-              }}
-              className="py-2 px-4 bg-gray-100 rounded-md hover:bg-gray-200 transition"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      )}
-
-      {/* Avatar Upload */}
-      <form onSubmit={upload} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-600 mb-1">
-            Update Avatar
-          </label>
-
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setFile(e.target.files[0])}
-            className="block w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-indigo-500 focus:border-indigo-500"
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition"
-        >
-          Upload Avatar
-        </button>
-      </form>
-
-      {/* Message */}
-      {msg && (
-        <div
-          className={`mt-4 text-sm px-3 py-2 rounded-md ${
-            msg.toLowerCase().includes("success")
-              ? "bg-green-100 text-green-700"
-              : "bg-yellow-100 text-yellow-700"
-          }`}
-        >
-          {msg}
-        </div>
-      )}
-
-      {/* Animations */}
-      <style>
-        {`
+        {/* Animations */}
+        <style>
+          {`
           .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
           @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
           .animate-slideDown { animation: slideDown 0.25s ease-out; }
           @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
         `}
-      </style>
-    </div>
+        </style>
+      </div>
     </>
   );
 }

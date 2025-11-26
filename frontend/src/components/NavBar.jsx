@@ -15,7 +15,10 @@ const avatarSrc = avatarUrl
     <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Branding */}
-        <h1 className="text-xl font-semibold text-indigo-600 tracking-tight">
+        <h1
+          onClick={() => navigate("/")}
+          className="text-xl font-semibold text-indigo-600 tracking-tight hover:cursor-pointer hover:text-indigo-800 transition"
+        >
           FE Intern App
         </h1>
 
